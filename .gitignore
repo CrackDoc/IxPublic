@@ -30,3 +30,5 @@
 *.exe
 *.out
 *.app
+/out/build/x64-Debug (默认值)
+/.vs
