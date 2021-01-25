@@ -93,7 +93,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <PostBuildEvent>
-      <Command>Install.cmd $(Configuration) $(Platform) D:\IDE\Utility\$(PlatformToolset) $(SolutionName)</Command>
+      <Command>Install.cmd $(Configuration) $(Platform) D:\IDE\Utility\$(PlatformToolset)\$(Platform) $(SolutionName)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -109,7 +109,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <PostBuildEvent>
-      <Command>Install.cmd $(Configuration) $(Platform) D:\IDE\Utility\$(PlatformToolset) $(SolutionName)</Command>
+      <Command>Install.cmd $(Configuration) $(Platform) D:\IDE\Utility\$(PlatformToolset)\$(Platform) $(SolutionName)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -129,7 +129,7 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <PostBuildEvent>
-      <Command>Install.cmd $(Configuration) $(Platform) D:\IDE\Utility\$(PlatformToolset) $(SolutionName)</Command>
+      <Command>Install.cmd $(Configuration) $(Platform) D:\IDE\Utility\$(PlatformToolset)\$(Platform) $(SolutionName)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -149,7 +149,7 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <PostBuildEvent>
-      <Command>Install.cmd $(Configuration) $(Platform) D:\IDE\Utility\$(PlatformToolset) $(SolutionName)</Command>
+      <Command>Install.cmd $(Configuration) $(Platform) D:\IDE\Utility\$(PlatformToolset)\$(Platform) $(SolutionName)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
