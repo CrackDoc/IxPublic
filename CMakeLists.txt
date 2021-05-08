@@ -15,6 +15,11 @@ endif()
 
 set(CMAKE_INSTALL_PREFIX ${IDE_PATH} CACHE PATH "Defulat Install prefix" FORCE)
 
+SET(CMAKE_DEBUG_POSTFIX  "d" CACHE STRING "add a postfix, usually d on windows")
+SET(CMAKE_RELEASE_POSTFIX "" CACHE STRING "add a postfix, usually empty on windows")
+SET(CMAKE_RELWITHDEBINFO_POSTFIX "rd" CACHE STRING "add a postfix, usually empty on windows")
+SET(CMAKE_MINSIZEREL_POSTFIX "s" CACHE STRING "add a postfix, usually empty on windows")
+
 # 包含子项目。
 add_subdirectory (${PROJECT_NAME})
 
