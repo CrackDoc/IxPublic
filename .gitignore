@@ -32,3 +32,5 @@
 *.app
 /out/build/x64-Debug (默认值)
 /.vs
+Install/.vs/Install142/v16/Browse.VC.db
+Install/.vs/Install142/v16/.suo
