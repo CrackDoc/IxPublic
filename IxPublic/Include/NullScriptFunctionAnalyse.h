@@ -10,12 +10,12 @@ public:
 	/**
 	*	@brief	解析脚本
 	*/
-	virtual bool Load(std::string szScript, int nLen = 0);
+	virtual bool Load(const char* szScript, int nLen = 0);
 	
 	/**
 	*	@brief	返回解析后的函数名称。
 	*/
-	virtual std::string Name();
+	virtual const char* Name();
 	
 	/**
 	*	@brief	返回解析结果参数数量。
@@ -25,19 +25,19 @@ public:
 	/**
 	*	@brief	返回某个参数的类型。
 	*/
-	virtual std::string GetParamType(int nIndex);
+	virtual const char* GetParamType(int nIndex);
 	
 	/**
 	*	@brief	返回某个参数的值。
 	*/
-	virtual std::string GetParamValue(int nIndex);
+	virtual const char* GetParamValue(int nIndex);
 	
 	/**
 	*	@brief	根据输入参数组合成函数。
 	*/
-	virtual std::string CombinationFunction(std::string szFunctionName, std::list<std::string>& sListParam);
+	virtual const char* CombinationFunction(const char* szFunctionName, std::list<const char*>& sListParam);
 
 private:
-	std::string m_strValue;
+	 char* m_strValue;
 };
 #endif // NullScriptFunctionAnalyse_h__

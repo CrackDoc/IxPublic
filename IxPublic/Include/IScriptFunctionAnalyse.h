@@ -83,7 +83,7 @@
 #include "IScriptAnalyzer.h"
 #include <list>
 #include "PublicExport.h"
-#include<string>
+
 class PUBLIC_EXPORT IScriptFunctionAnalyse : public IScriptAnalyzer
 {
 public:
@@ -93,12 +93,12 @@ public:
 	/**
 	*	@brief	解析脚本
 	*/
-	virtual bool Load(std::string szScript, int nLen = 0) = 0;
+	virtual bool Load(const char *szScript, int nLen = 0) = 0;
 	
 	/**
 	*	@brief	返回解析后的函数名称。
 	*/
-	virtual std::string Name() = 0;
+	virtual const char* Name() = 0;
 	
 	/**
 	*	@brief	返回解析结果参数数量。
@@ -108,16 +108,16 @@ public:
 	/**
 	*	@brief	返回某个参数的类型。
 	*/
-	virtual std::string GetParamType(int nIndex) = 0;
+	virtual const char* GetParamType(int nIndex) = 0;
 	
 	/**
 	*	@brief	返回某个参数的值。
 	*/
-	virtual std::string GetParamValue(int nIndex) = 0;
+	virtual const char* GetParamValue(int nIndex) = 0;
 	
 	/**
 	*	@brief	根据输入参数组合成函数。
 	*/
-	virtual std::string CombinationFunction(std::string szFunctionName, std::list<std::string>& sListParam) = 0;
+	virtual const char* CombinationFunction(const char* szFunctionName, std::list<const char*>& sListParam) = 0;
 };
 #endif // IScriptFunctionAnalyse_h__

@@ -1,7 +1,8 @@
 #include "NullScriptFunctionAnalyse.h"
 
 
-CNullScriptFunctionAnalyse::CNullScriptFunctionAnalyse(void)
+CNullScriptFunctionAnalyse::CNullScriptFunctionAnalyse(void):
+	m_strValue(nullptr)
 {
 
 }
@@ -12,13 +13,25 @@ CNullScriptFunctionAnalyse::~CNullScriptFunctionAnalyse(void)
 
 }
 
-bool CNullScriptFunctionAnalyse::Load(std::string szScript, int nLen /*= 0*/)
+bool CNullScriptFunctionAnalyse::Load(const char* szScript, int nLen /*= 0*/)
 {
-	m_strValue = szScript;
+	if(nLen == 0)
+	{
+		return false;
+	}
+	if (!m_strValue)
+	{
+		delete[] m_strValue;
+		m_strValue = nullptr;
+	}
+	m_strValue = new char[nLen];
+	memset(m_strValue, '\0', sizeof(char) * nLen);
+	memcpy(m_strValue, szScript,sizeof(char)*nLen);
+
 	return true;
 }
 
-std::string CNullScriptFunctionAnalyse::Name()
+const char* CNullScriptFunctionAnalyse::Name()
 {
 	return m_strValue;
 }
@@ -28,17 +41,17 @@ int CNullScriptFunctionAnalyse::GetParamCount()
 	return 0;
 }
 
-std::string CNullScriptFunctionAnalyse::GetParamType(int nIndex)
+const char* CNullScriptFunctionAnalyse::GetParamType(int nIndex)
 {
 	return m_strValue;
 }
 
-std::string CNullScriptFunctionAnalyse::GetParamValue(int nIndex)
+const char* CNullScriptFunctionAnalyse::GetParamValue(int nIndex)
 {
 	return m_strValue;
 }
 
-std::string CNullScriptFunctionAnalyse::CombinationFunction(std::string szFunctionName, std::list<std::string>& sListParam)
+const char* CNullScriptFunctionAnalyse::CombinationFunction(const char* szFunctionName, std::list<const char*>& sListParam)
 {
 	return m_strValue;
 }

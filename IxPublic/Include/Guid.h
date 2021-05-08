@@ -2,8 +2,8 @@
 #ifndef Guid_h__
 #define Guid_h__
 #include "PublicExport.h"
+#include "xString.h"
 
-#include <string>
 #include <stdio.h>
 
 #ifdef WIN32
@@ -38,9 +38,9 @@ public:
 	 * @fn       toString()   
 	 * @brief    ×ª»¯Îª×Ö·û´®  
 	 * @param    NULL
-	 * @return   std::string
+	 * @return   const char*
 	*/
-	std::string toString();
+	IOx::String toString();
 private:
 	CGuid(void);
 	GUID m_nGuid;
