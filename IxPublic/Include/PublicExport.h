@@ -5,15 +5,15 @@
 #if defined(WIN32)
 
 #ifdef IxPublic_EXPORTS
-#define PUBLIC_EXPORT __declspec(dllexport)
+#define IxPublic_EXPORT __declspec(dllexport)
 #else
-#define  PUBLIC_EXPORT __declspec(dllimport)
+#define  IxPublic_EXPORT __declspec(dllimport)
 #endif
 
 #elif __linux__
-#define PUBLIC_EXPORT
+#define IxPublic_EXPORT
 
 #else
-#define PUBLIC_EXPORT 
+#define IxPublic_EXPORT 
 #endif
 #endif // PublicExport_h__

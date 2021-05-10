@@ -1,8 +1,9 @@
+#pragma once
 #ifndef NullScriptFunctionAnalyse_h__
 #define NullScriptFunctionAnalyse_h__
 #include "IScriptFunctionAnalyse.h"
 
-class PUBLIC_EXPORT CNullScriptFunctionAnalyse :public IScriptFunctionAnalyse
+class IxPublic_EXPORT CNullScriptFunctionAnalyse :public IScriptFunctionAnalyse
 {
 public:
 	CNullScriptFunctionAnalyse(void);
@@ -10,7 +11,7 @@ public:
 	/**
 	*	@brief	解析脚本
 	*/
-	virtual bool Load(const char* szScript, int nLen = 0);
+	virtual bool Load(const char * szScript, int nLen = 0);
 	
 	/**
 	*	@brief	返回解析后的函数名称。
@@ -35,9 +36,9 @@ public:
 	/**
 	*	@brief	根据输入参数组合成函数。
 	*/
-	virtual const char* CombinationFunction(const char* szFunctionName, std::list<const char*>& sListParam);
+	virtual const char* CombinationFunction(const char* szFunctionName, void * sListParam);
 
 private:
-	 char* m_strValue;
+	char * m_strValue;
 };
 #endif // NullScriptFunctionAnalyse_h__

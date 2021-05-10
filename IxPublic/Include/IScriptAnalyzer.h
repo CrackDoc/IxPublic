@@ -13,10 +13,9 @@
 /**
 *	@brief	脚本分析接口类。
 */
-class PUBLIC_EXPORT IScriptAnalyzer
+class IxPublic_EXPORT IScriptAnalyzer
 {
 public:
-	IScriptAnalyzer(){};
 	virtual ~IScriptAnalyzer(){};
 };
 

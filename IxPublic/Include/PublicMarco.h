@@ -241,6 +241,6 @@ class EXPORT_MARK className:public baseClass \
 
 namespace GLOBALUtility
 {
-	 extern PUBLIC_EXPORT bool isHostLittleEndian();
+	 extern IxPublic_EXPORT bool isHostLittleEndian();
 
 }

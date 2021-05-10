@@ -1,5 +1,7 @@
 #include "UnitCMake_Project.h"
 
+#include <string>
+
 BEGIN_IMPLEMENT_TEST(UnitCMake_Project)
 ADD_TEST_FUNCTION(Test)
 END_IMPLEMENT_TEST()

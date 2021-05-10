@@ -77,14 +77,13 @@
 					}
 					*/
 //////////////////////////////////////////////////////////////////////////
+#pragma once
 #ifndef IScriptFunctionAnalyse_h__
 #define IScriptFunctionAnalyse_h__
 
 #include "IScriptAnalyzer.h"
-#include <list>
-#include "PublicExport.h"
 
-class PUBLIC_EXPORT IScriptFunctionAnalyse : public IScriptAnalyzer
+class IxPublic_EXPORT IScriptFunctionAnalyse : public IScriptAnalyzer
 {
 public:
 	IScriptFunctionAnalyse(){};
@@ -98,7 +97,7 @@ public:
 	/**
 	*	@brief	返回解析后的函数名称。
 	*/
-	virtual const char* Name() = 0;
+	virtual const char * Name() = 0;
 	
 	/**
 	*	@brief	返回解析结果参数数量。
@@ -108,16 +107,16 @@ public:
 	/**
 	*	@brief	返回某个参数的类型。
 	*/
-	virtual const char* GetParamType(int nIndex) = 0;
+	virtual const char * GetParamType(int nIndex) = 0;
 	
 	/**
 	*	@brief	返回某个参数的值。
 	*/
-	virtual const char* GetParamValue(int nIndex) = 0;
+	virtual const char * GetParamValue(int nIndex) = 0;
 	
 	/**
 	*	@brief	根据输入参数组合成函数。
 	*/
-	virtual const char* CombinationFunction(const char* szFunctionName, std::list<const char*>& sListParam) = 0;
+	virtual const char* CombinationFunction(const char* szFunctionName, void * sListParam) = 0;
 };
 #endif // IScriptFunctionAnalyse_h__

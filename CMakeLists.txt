@@ -13,7 +13,9 @@ if(NOT EXISTS ${IDE_PATH})
 	file(MAKE_DIRECTORY ${IDE_PATH})
 endif()
 
-set(CMAKE_INSTALL_PREFIX ${IDE_PATH} CACHE PATH "Defulat Install prefix" FORCE)
+set(CMAKE_INSTALL_PREFIX ${IDE_PATH} CACHE STRING "Defulat Install prefix" FORCE)
+
+SET(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/CMakeModules" CACHE STRING "ModulesPATH" FORCE)
 
 SET(CMAKE_DEBUG_POSTFIX  "d" CACHE STRING "add a postfix, usually d on windows")
 SET(CMAKE_RELEASE_POSTFIX "" CACHE STRING "add a postfix, usually empty on windows")

@@ -1,4 +1,5 @@
 #include "Guid.h"
+#include <string>
 
 CGuid::CGuid(void)
 {
@@ -20,9 +21,22 @@ CGuid CGuid::GenerateGuid()
 	return nGuid;
 }
 
-IOx::String CGuid::toString()
+
+CGuid& CGuid::operator=(const CGuid& other)
 {
-	char buf[64] = {0};
+	memcpy((void*)&m_nGuid, (void*)&other.GetGUID(), sizeof(_GUID));
+
+	return *this;
+}
+
+GUID CGuid::GetGUID()const
+{
+	return m_nGuid;
+}
+
+const char* CGuid::toString()
+{
+char buf[64] = { 0 };
 #ifdef __GNUC__
 	snprintf(
 #else // MSVC
@@ -36,5 +50,5 @@ IOx::String CGuid::toString()
 		m_nGuid.Data4[2], m_nGuid.Data4[3],
 		m_nGuid.Data4[4], m_nGuid.Data4[5],
 		m_nGuid.Data4[6], m_nGuid.Data4[7]);
-	return IOx::String(buf);
+	return std::string(buf).c_str();
 }

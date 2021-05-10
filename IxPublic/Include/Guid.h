@@ -2,8 +2,6 @@
 #ifndef Guid_h__
 #define Guid_h__
 #include "PublicExport.h"
-#include "xString.h"
-
 #include <stdio.h>
 
 #ifdef WIN32
@@ -21,9 +19,10 @@ typedef struct _GUID
 #endif
 
 //编译时，WIN32下链接ole32, Linux下链接libuuid
-class PUBLIC_EXPORT CGuid
+class IxPublic_EXPORT CGuid
 {
 public:
+	CGuid(void);
 	~CGuid(void);
 public:
 
@@ -38,11 +37,29 @@ public:
 	 * @fn       toString()   
 	 * @brief    转化为字符串  
 	 * @param    NULL
-	 * @return   const char*
+	 * @return   std::string
 	*/
-	IOx::String toString();
+	const char* toString();
+	/**
+	 * @fn       operator=
+	 * @author   Crack
+	 * @brief       
+	 * @date     2021/5/8 14:03
+	 * @param    
+	 * @return   
+	*/
+	CGuid& operator=(const CGuid& other);
+
+	/**
+	 * @fn       brief
+	 * @author   Crack
+	 * @brief       
+	 * @date     2021/5/8 14:05
+	 * @param    
+	 * @return   
+	*/
+	GUID GetGUID() const;
 private:
-	CGuid(void);
-	GUID m_nGuid;
+	mutable GUID m_nGuid;
 };
 #endif // Guid_h__
