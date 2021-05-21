@@ -1,7 +1,7 @@
 #pragma once
 #ifndef Guid_h__
 #define Guid_h__
-#include "PublicExport.h"
+#include "IxPublicExport.h"
 #include <stdio.h>
 
 #ifdef WIN32

@@ -1,6 +1,6 @@
 #pragma once
-#ifndef PublicExport_h__
-#define PublicExport_h__
+#ifndef IxPublicExport_h__
+#define IxPublicExport_h__
 
 #if defined(WIN32)
 
@@ -16,4 +16,4 @@
 #else
 #define IxPublic_EXPORT 
 #endif
-#endif // PublicExport_h__
+#endif // IxPublicExport_h__

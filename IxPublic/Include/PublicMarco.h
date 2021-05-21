@@ -1,5 +1,5 @@
 
-#include "PublicExport.h"
+#include "IxPublicExport.h"
 
 #define DECLARE_SINGLETON_CLASS(baseClass, className, EXPORT_MARK) \
 class EXPORT_MARK className:public baseClass \

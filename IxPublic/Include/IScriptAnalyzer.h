@@ -9,7 +9,7 @@
 #ifndef IScriptAnalyzer_h__
 #define IScriptAnalyzer_h__
 
-#include "PublicExport.h"
+#include "IxPublicExport.h"
 /**
 *	@brief	脚本分析接口类。
 */
