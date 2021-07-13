@@ -1,4 +1,3 @@
-#pragma once
 #ifndef NullScriptFunctionAnalyse_h__
 #define NullScriptFunctionAnalyse_h__
 #include "IScriptFunctionAnalyse.h"

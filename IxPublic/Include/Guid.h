@@ -1,14 +1,11 @@
-#pragma once
 #ifndef Guid_h__
 #define Guid_h__
 #include "IxPublicExport.h"
-#include <stdio.h>
 
 #ifdef WIN32
 #include <objbase.h>
 #else
 #include <uuid/uuid.h>
-
 typedef struct _GUID
 {
 	unsigned long Data1;
@@ -48,7 +45,7 @@ public:
 	 * @param    
 	 * @return   
 	*/
-	CGuid& operator=(const CGuid& other);
+	CGuid& operator=(CGuid other);
 
 	/**
 	 * @fn       brief
@@ -58,8 +55,10 @@ public:
 	 * @param    
 	 * @return   
 	*/
-	GUID GetGUID() const;
+	GUID GetGUID();
 private:
-	mutable GUID m_nGuid;
+	GUID m_nGuid;
+
+	char szGuid[64];
 };
 #endif // Guid_h__

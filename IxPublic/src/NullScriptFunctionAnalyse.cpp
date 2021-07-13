@@ -1,7 +1,7 @@
 #include "NullScriptFunctionAnalyse.h"
 #include <string>
 #include <list>
-
+using namespace std;
 CNullScriptFunctionAnalyse::CNullScriptFunctionAnalyse(void)
 	:m_strValue(nullptr)
 {
